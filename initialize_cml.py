@@ -29,11 +29,16 @@ __copyright__ = "Copyright (c) 2023 Cisco and/or its affiliates."
 __license__ = "Cisco Sample Code License, Version 1.1"
 
 import logging
+import os
 from virl2_client import ClientLibrary
+
+log_file = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), "initialize_cml.log"
+)
 
 logging.basicConfig(
     level=logging.INFO,
-    filename="initialize_cml.log",
+    filename=log_file,
     filemode="w",
     format="%(asctime)s - %(levelname)s - %(message)s",
     datefmt="%d-%b-%Y %H:%M:%S",
